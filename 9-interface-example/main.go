@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//Animal interface.
 type Animal interface {
 	sound()
 	speed() int
@@ -17,7 +18,7 @@ type Cat struct {
 	name string
 }
 
-// Dog implements methods.
+// Dog implementing Animal interface methods.
 func (d *Dog) sound()  {
 	fmt.Println("Bow Bow bow bow...... bow  bow.....!")
 }
@@ -34,7 +35,7 @@ func (d *Dog) iam() string {
 	return d.name;
 }
 
-//Cat implements methods.
+//Cat implementing Animal interface methods.
 func (c *Cat) sound() {
 	fmt.Println("Meow Meow meow meeoow.... meow..")
 }
@@ -51,6 +52,7 @@ func (d *Cat) iam() string {
 	return d.name;
 }
 
+//function which accept Animal type.
 func display(animal Animal)  {
 	fmt.Printf("=========== %s ============ \n", animal.iam())
 	fmt.Printf("%s sounds as  ", animal.iam())
@@ -61,8 +63,8 @@ func display(animal Animal)  {
 	} else {
 		fmt.Printf("%s is not wild animal. \n", animal.iam())
 	}
-
 }
+
 func main() {
 	var dog = new(Dog)
 	dog.name = "Dog"
