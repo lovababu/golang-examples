@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/lovababu/golang-examples/cardprocessing/model"
+	"github.com/lovababu/golang-examples/cardprocessing-non-di/model"
 	"time"
 	"fmt"
 )

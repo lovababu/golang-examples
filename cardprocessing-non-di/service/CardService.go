@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/lovababu/golang-examples/cardprocessing/repository"
+	"github.com/lovababu/golang-examples/cardprocessing-non-di/repository"
 	"time"
 	"fmt"
 )

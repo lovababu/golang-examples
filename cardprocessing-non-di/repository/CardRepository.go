@@ -21,7 +21,7 @@ func NewCardRepository() *CardRepository  {
 
 //Posts transaction for the specified card.
 func (cR *CardRepository) PostTransaction(cN string, amt float32, txTime time.Time)  (bool, error) {
-	 fmt.Printf("CardRepository: Posting transaction for card: %s . \n", cN)
+	fmt.Printf("CardRepository: Posting transaction for card: %s . \n", cN)
 	return true, nil
 }
 

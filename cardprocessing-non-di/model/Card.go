@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 	"errors"
-	"github.com/lovababu/golang-examples/cardprocessing/service"
+	"github.com/lovababu/golang-examples/cardprocessing-non-di/service"
 )
 
 type Card struct {
@@ -19,7 +19,20 @@ type Card struct {
 	LateFee 	float32
 	Transactions[] 	Statement
 
-	CardService 	*service.CardService
+	CardService 	*service.CardService   //
+}
+
+//Validates the Credit Card. valid if start with 4526, else not.
+func (cc *Card) Validate() (bool, error) {
+	fmt.Println("Validating Credit Card..")
+	//TODO: validation specific to credit card.
+	if strings.HasPrefix(cc.Number, "4526") {
+		return true, nil
+	} else {
+		return false, errors.New("Invalid Credit card.")
+	}
+
+	return false, nil
 }
 
 func NewCreditCard() *Card {
@@ -37,15 +50,3 @@ type Statement struct {
 	TransactionId 	string
 }
 
-//Validates the Credit Card. valid if start with 4526, else not.
-func (cc *Card) Validate() (bool, error) {
-	fmt.Println("Validating Credit Card..")
-	//TODO: validation specific to credit card.
-	if strings.HasPrefix(cc.Number, "4526") {
-		return true, nil
-	} else {
-		return false, errors.New("Invalid Credit card.")
-	}
-
-	return false, nil
-}
